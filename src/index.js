@@ -1,25 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './Pages/MainPage';
+import App from './Pages/DetailPage';
+import ListPage from './Pages/ListPage';
 import reportWebVitals from './reportWebVitals';
-import { createHashRouter, RouterProvider } from "react-router-dom";
-import ErrorPage from './Pages/Common/ErrorPage';
+import { Routes, HashRouter, Route } from "react-router-dom";
 
-const router = createHashRouter([
-  {
-    path: "/",
-    element: <App />,
-    errorElement: <ErrorPage />,
-  }
-]);
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-      <RouterProvider router={router} />
-  </React.StrictMode>
+      <HashRouter>
+        <Routes>
+          <Route path="/" element={<ListPage />} />
+          <Route path="/list" element={<ListPage />} />
+          <Route path="/movie/:movieId" element={<App />} />
+        </Routes>
+      </HashRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
