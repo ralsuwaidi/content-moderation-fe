@@ -8,7 +8,7 @@ function ListItem(props) {
         <Link to={"/movie/" + props.movie.id}>
 
                 <div class="w-full p-1 md:p-2">
-                    <img alt="gallery" class="block object-cover object-center w-full h-48 rounded-lg"
+                    <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
                         src={props.movie.image} />
                 </div>
         </Link>
