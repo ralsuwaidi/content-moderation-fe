@@ -11,7 +11,7 @@ function ListPage() {
 
             <section class="overflow-hidden text-gray-700 mt-10">
 
-                <div class="container px-3   py-2 mx-auto lg:pt-12 lg:px-32">
+                <div class="container px-3 py-2 mx-auto lg:pt-12 lg:px-32">
                     <div className="pb-10">
                         <SearchBar />
                     </div>
