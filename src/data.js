@@ -15,8 +15,8 @@ const movieData =
             language_text: "Name-calling (feisty, oddities, strange, turnip, sad eyes, zurg, lucky, quitter, saucy fingers), exclamations (blast, oh no, you’re toast, I’m gonna mess you up)",
             description: "The origin story of the Buzz Lightyear toy in “Toy Story” follows the Space Rangers as they get marooned on an alien planet. Buzz (voiced by Chris Evans) is determined to get everyone back home and complete their mission, while encountering an army of ruthless robots led by the evil Zurg (voiced by James Brolin). Also with the voices of Keke Palmer, Peter Sohn, Taika Waititi, Dale Soules, Uzo Aduba, Mary McDonald-Lewis, Isiah Whitlock Jr., Angus MacLane and Bill Hader. Directed by Angus MacLane",
         },        {
-            id: "avatar",
-            title: "Avatar: The Way of Water",
+            id: "panther",
+            title: "Wakanda Forever",
             year: "2022",
             rating: "PG",
             image: "https://media-cache.cinematerial.com/p/500x/gvbzokwl/black-panther-wakanda-forever-movie-poster.jpg?v=1664882491",
@@ -29,8 +29,8 @@ const movieData =
             language_text: "Name-calling (feisty, oddities, strange, turnip, sad eyes, zurg, lucky, quitter, saucy fingers), exclamations (blast, oh no, you’re toast, I’m gonna mess you up)",
             description: "The origin story of the Buzz Lightyear toy in “Toy Story” follows the Space Rangers as they get marooned on an alien planet. Buzz (voiced by Chris Evans) is determined to get everyone back home and complete their mission, while encountering an army of ruthless robots led by the evil Zurg (voiced by James Brolin). Also with the voices of Keke Palmer, Peter Sohn, Taika Waititi, Dale Soules, Uzo Aduba, Mary McDonald-Lewis, Isiah Whitlock Jr., Angus MacLane and Bill Hader. Directed by Angus MacLane",
         },        {
-            id: "lightyear",
-            title: "Lightyear",
+            id: "menu",
+            title: "The Menu",
             year: "2022",
             rating: "PG",
             image: "https://cdn.cinematerial.com/p/297x/fbn7nr8g/the-menu-movie-poster-md.jpg?v=1663164571",
