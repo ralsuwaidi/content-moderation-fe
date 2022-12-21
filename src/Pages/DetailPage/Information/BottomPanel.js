@@ -4,14 +4,25 @@ import SimpleRating from "./SimpleRating";
 import TextWithTitle from "./TextWithTitle";
 
 function BottomPanel(props) {
+
+    function getLevel(percentage){
+        if (percentage <33){
+            return "قليل"
+        }
+
+        if (percentage > 66) return "كثير";
+
+        return "متوسط"
+    }   
+
     return (
         <div className='bg-white min-h-screen rounded-3xl px-5 pt-10 pb-48'>
             <div className="max-w-2xl mx-auto">
 
             <div className="flex justify-between mx-5 max-w-xl md:mx-auto">
-                <SimpleRating rating="Low" category="Sex & Nudity" />
-                <SimpleRating rating="Low" category="Violence & Gore" />
-                <SimpleRating rating="Low" category="Language" />
+                <SimpleRating rating={getLevel(props.movie.inappropriate_rating)} category="مواضيع غير مناسبة" />
+                <SimpleRating rating={getLevel(props.movie.language_rating)} category="ألفاظ غير لائقة" />
+                <SimpleRating rating={getLevel(props.movie.violence_rating)} category="مشاهد عنيفة" />
             </div>
 
             <div className="mt-10">
@@ -19,22 +30,23 @@ function BottomPanel(props) {
             </div>
 
             <div className="flex gap-3 justify-center mt-8">
-                <Pill text="2022" />
-                <Pill text="PG" />
+                <Pill text={props.movie.year} />
+                <Pill text={props.movie.rating} />
             </div>
 
             <div className="mt-10">
-                <ProgressBar name="Sex & Nudity" percentage="20" />
-                <ProgressBar name="Violence & Gore" percentage="50" />
-                <ProgressBar name="Language" percentage="20" />
-
+                <ProgressBar name="مشاهد عنيفة" percentage={props.movie.violence_rating} />
+                <ProgressBar name="ألفاظ غير لائقة" percentage={props.movie.language_rating} />
+                <ProgressBar name="مواضيع غير مناسبة" percentage={props.movie.inappropriate_rating} />
             </div>
 
             <div className="mt-8">
-                <TextWithTitle title="Description" text={props.movie.description} />
-                <TextWithTitle title="Sex & Nudity" text={props.movie.sex_and_nudity_text} />
-                <TextWithTitle title="Violence & Gore" text={props.movie.violence_and_gore_text} />
-                <TextWithTitle title="Language" text={props.movie.language_text} />
+                <TextWithTitle title="الملخص" content={props.movie.summary} />
+                <TextWithTitle title="مواضيع غير مناسبة للأطفال " content={props.movie.inappropriate} />
+                <TextWithTitle title="ألفاظ لا نشجع على استخدامها " content={props.movie.language} />
+                <TextWithTitle title="مشاهد عنيفة " content={props.movie.violence} />
+                <TextWithTitle title="استخدام مواد مخدرة" content={props.movie.drug_usage} />
+                <TextWithTitle title="التشكيك في المعتقدات الدينية " content={props.movie.religious_imagery} />
             </div>
 
             </div>

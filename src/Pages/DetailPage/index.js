@@ -1,27 +1,40 @@
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import './App.css';
-import movieData from '../../data';
 import BottomPanel from './Information/BottomPanel';
 import ImageHeader from './ImageHeader';
+import API from "../../Common/api.js";
+import { useEffect, useState } from "react";
 
 function App() {
-  let { movieId } = useParams();
-  const movie = movieData.find((obj) => obj.id === movieId);
-  const poster = movie.image
+  let { movieSlug } = useParams();
+  const [movie, setMovie] = useState()
 
+  useEffect(() => {
+    API.get('movie/',).then((data) => {
+      const movies = data.data
 
-  return (
-    <div className={`App`}>
-          <ImageHeader poster={poster}>
-        <div className='h-2/3'>
+      const movie = movies.find((obj) => obj.slug === movieSlug);
+      setMovie(movie)
+      console.log(movie)
+    })
 
-        </div>
+  }, [movieSlug]);
 
-        <BottomPanel movie={movie} />
+  if (movie) {
+    return (
+      <div className={`App`}>
+        <ImageHeader movie={movie}>
+          <div className='h-2/4'>
+
+          </div>
+
+          <BottomPanel movie={movie} />
 
         </ImageHeader>
-    </div>
-  );
+      </div>
+    );
+  }
+
 }
 
 export default App;

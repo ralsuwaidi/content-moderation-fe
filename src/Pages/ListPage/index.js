@@ -1,32 +1,47 @@
-import movieData from "../../data.js"
 import ListItem from './ListItem';
 import SearchBar from "./SearchBar.js";
+import API from "../../Common/api.js";
+import { useEffect, useState } from "react";
 
 function ListPage() {
+    const [movies, setMovies] = useState()
+
+    useEffect(() => {
+        API.get('movie/', ).then((data) => (setMovies(data.data)))
+    }, []);
 
 
-    return (
-        <div>
-
-
-            <section class="overflow-hidden text-gray-700 mt-10">
-
-                <div class="container px-3 py-2 mx-auto lg:pt-12 lg:px-32">
-                    <div className="pb-10">
-                        <SearchBar />
+    if (movies) {
+        return (
+            <div>
+    
+    
+                <section className="overflow-hidden text-gray-700 mt-10">
+    
+                    <div className=" px-3 py-2 mx-auto lg:pt-12 lg:px-32">
+                        <div className="pb-10">
+                            <SearchBar />
+                        </div>
+                        <div className="grid grid-cols-3 gap-3 justify-items-stretch items-stretch">
+    
+                            {movies.map((movie) => (
+                                <ListItem movie={movie} />
+                            ))}
+    
+                        </div>
                     </div>
-                    <div class="flex flex-wrap -m-1 md:-m-2">
+                </section>
+    
+            </div>
+        );
+        
+    } else {
 
-                        {movieData.map((movie) => (
-                            <ListItem movie={movie} />
-                        ))}
+        <p>loading...</p>
+        
+    }
 
-                    </div>
-                </div>
-            </section>
 
-        </div>
-    );
 }
 
 export default ListPage;

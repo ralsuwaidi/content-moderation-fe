@@ -1,8 +1,13 @@
+import Parser from 'html-react-parser';
+
 function TextWithTitle(props) {
     return (
         <div className="mt-5">
-            <p className="text-lg font-semibold">{props.title}</p>
-            <p className="mt-5">{props.text}</p>
+            <div dir="rtl" className="mt-5 prose lg:prose-xl">
+                <h2>{props.title}</h2>
+                {Parser(props.content)}
+
+            </div>
         </div>
     );
 }

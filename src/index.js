@@ -15,7 +15,7 @@ root.render(
         <Routes>
           <Route path="/" element={<ListPage />} />
           <Route path="/list" element={<ListPage />} />
-          <Route path="/movie/:movieId" element={<App />} />
+          <Route path="/movie/:movieSlug" element={<App />} />
         </Routes>
       </HashRouter>
 );
