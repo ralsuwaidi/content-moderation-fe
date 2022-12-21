@@ -15,7 +15,6 @@ function App() {
 
       const movie = movies.find((obj) => obj.slug === movieSlug);
       setMovie(movie)
-      console.log(movie)
     })
 
   }, [movieSlug]);
