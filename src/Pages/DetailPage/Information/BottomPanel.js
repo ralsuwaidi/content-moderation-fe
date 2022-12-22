@@ -35,16 +35,16 @@ function BottomPanel(props) {
             </div>
 
             <div className="mt-10">
-                <ProgressBar name="مشاهد عنيفة" percentage={props.movie.violence_rating} />
+                <ProgressBar name="مشاهد عنيفة " percentage={props.movie.violence_rating} />
                 <ProgressBar name="ألفاظ غير لائقة" percentage={props.movie.language_rating} />
                 <ProgressBar name="مواضيع غير مناسبة" percentage={props.movie.inappropriate_rating} />
             </div>
 
             <div className="mt-8">
                 <TextWithTitle title="الملخص" content={props.movie.summary} />
-                <TextWithTitle title="مواضيع غير مناسبة للأطفال " content={props.movie.inappropriate} />
-                <TextWithTitle title="ألفاظ لا نشجع على استخدامها " content={props.movie.language} />
-                <TextWithTitle title="مشاهد عنيفة " content={props.movie.violence} />
+                <TextWithTitle title="مشاهد مخلة وعري" content={props.movie.inappropriate} />
+                <TextWithTitle title="ألفاظ غير لائقة" content={props.movie.language} />
+                <TextWithTitle title="مشاهد عنيفة شاملة للكثير من القتل والدماء " content={props.movie.violence} />
                 <TextWithTitle title="استخدام مواد مخدرة" content={props.movie.drug_usage} />
                 <TextWithTitle title="التشكيك في المعتقدات الدينية " content={props.movie.religious_imagery} />
             </div>
