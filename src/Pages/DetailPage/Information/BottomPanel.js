@@ -16,7 +16,7 @@ function BottomPanel(props) {
     }   
 
     return (
-        <div className='bg-white min-h-screen rounded-3xl px-5 pt-10 pb-48'>
+        <div className='bg-white min-h-screen rounded-3xl lg:rounded-none px-5 pt-10 pb-48'>
             <div className="max-w-2xl mx-auto">
 
             <div className="flex justify-between mx-5 max-w-xl md:mx-auto">
