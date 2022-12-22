@@ -1,5 +1,4 @@
 import { useParams } from 'react-router-dom';
-import './App.css';
 import BottomPanel from './Information/BottomPanel';
 import ImageHeader from './ImageHeader';
 import API from "../../Common/api.js";
@@ -21,7 +20,6 @@ function App() {
 
   if (movie) {
     return (
-      <div className={`App`}>
         <ImageHeader movie={movie}>
           <div className='h-2/4'>
 
@@ -30,7 +28,6 @@ function App() {
           <BottomPanel movie={movie} />
 
         </ImageHeader>
-      </div>
     );
   }
 

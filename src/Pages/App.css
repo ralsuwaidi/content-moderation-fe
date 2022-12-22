@@ -1,0 +1,6 @@
+@font-face {
+    font-family: "Dubai";   /*Can be any text*/
+    src: local("DubaiW23-Light"),
+      url("./Fonts/Dubai/DubaiW23-Light.ttf") format("truetype");
+  }
+  
