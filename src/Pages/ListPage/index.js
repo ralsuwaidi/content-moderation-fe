@@ -2,6 +2,8 @@ import ListItem from './ListItem';
 import SearchBar from "./SearchBar.js";
 import API from "../../Common/api.js";
 import { useEffect, useState } from "react";
+import ReactLoading from 'react-loading';
+
 
 function ListPage() {
     const [movies, setMovies] = useState()
@@ -39,7 +41,9 @@ function ListPage() {
 
     } else {
 
-        <p>loading...</p>
+        <div className='h-screen w-screen'>
+            <ReactLoading type={'spin'} color={'#ffffff'} height={'50%'} width={'50%'} />
+        </div>
 
     }
 
