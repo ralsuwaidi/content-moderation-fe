@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { BiTimeFive } from "react-icons/bi";
+import { AiFillPlayCircle } from "react-icons/ai"
+
 function ImageHeader(props) {
     return (
         <div className={"w-full h-screen bg-no-repeat bg-cover bg-center"} style={{ backgroundImage: `url(${props.movie.poster})` }}>
@@ -22,6 +24,12 @@ function ImageHeader(props) {
                     </div>
                 </div>
             </div>
+
+            <div className=" mt-60 z-auto flex justify-center w-full text-5xl text-orange-500">
+
+                <AiFillPlayCircle />
+            </div>
+
 
             {props.children}
         </div>
