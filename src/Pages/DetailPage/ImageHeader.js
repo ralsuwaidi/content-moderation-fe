@@ -25,7 +25,7 @@ function ImageHeader(props) {
                 </div>
             </div>
 
-            <div className=" mt-60 z-auto flex justify-center w-full text-5xl text-orange-500">
+            <div className=" mt-36 mb-12 z-auto flex justify-center w-full text-7xl text-orange-500">
 
                 <AiFillPlayCircle />
             </div>

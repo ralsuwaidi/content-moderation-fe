@@ -21,7 +21,7 @@ function App() {
   if (movie) {
     return (
         <ImageHeader movie={movie}>
-          <div className='h-1/4'>
+          <div className='h-1/6'>
 
           </div>
 
