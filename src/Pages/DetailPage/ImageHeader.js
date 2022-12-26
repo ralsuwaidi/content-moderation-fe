@@ -4,8 +4,9 @@ import { BiTimeFive } from "react-icons/bi";
 import { AiFillPlayCircle } from "react-icons/ai"
 
 function ImageHeader(props) {
+    const imageUrl =  process.env.REACT_APP_BASE_URL.substring(0, process.env.REACT_APP_BASE_URL.lastIndexOf('/api/')) + props.movie.poster.data.attributes.url
     return (
-        <div className={"w-full h-screen bg-no-repeat bg-cover bg-center"} style={{ backgroundImage: `url(${props.movie.poster})` }}>
+        <div className={"w-full h-screen bg-no-repeat bg-cover bg-center"} style={{ backgroundImage: `url(${imageUrl})` }}>
 
             <div className=" flex pt-24 justify-between mx-8 md:mx-14 items-center">
 

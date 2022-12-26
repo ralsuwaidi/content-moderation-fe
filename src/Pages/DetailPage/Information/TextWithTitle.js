@@ -1,11 +1,13 @@
-import Parser from 'html-react-parser';
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 function TextWithTitle(props) {
     return (
         <div className="mt-5">
             <div dir="rtl" className="mt-5 prose lg:prose-xl">
                 <h2>{props.title}</h2>
-                {Parser(props.content)}
+                <ReactMarkdown>
+                    {props.content}
+                </ReactMarkdown>
 
             </div>
         </div>

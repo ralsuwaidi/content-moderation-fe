@@ -5,18 +5,18 @@ import API from "../../Common/api.js";
 import { useEffect, useState } from "react";
 
 function App() {
-  let { movieSlug } = useParams();
+  let { movieId } = useParams();
   const [movie, setMovie] = useState()
 
   useEffect(() => {
-    API.get('movie/',).then((data) => {
-      const movies = data.data
+    API.get('movies/' + movieId + "?populate=*",).then((data) => {
+      const movie = data.data.data.attributes
+      console.log(movie)
 
-      const movie = movies.find((obj) => obj.slug === movieSlug);
       setMovie(movie)
     })
 
-  }, [movieSlug]);
+  }, [movieId]);
 
   if (movie) {
     return (

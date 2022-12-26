@@ -9,7 +9,7 @@ function ListPage() {
     const [movies, setMovies] = useState()
 
     useEffect(() => {
-        API.get('movie/',).then((data) => (setMovies(data.data)))
+        API.get('movies/?populate=*',).then((data) => (console.log(setMovies(data))))
     }, []);
 
 
@@ -26,9 +26,10 @@ function ListPage() {
                         </div>
                         <div className="grid grid-cols-3 gap-3 justify-items-stretch items-stretch">
 
-                            {movies.map((movie) => (
-                                <div key={movie.slug}>
-                                    <ListItem movie={movie} />
+                            {movies.data.data.map((movie) => (
+                                <div key={movie.id}>
+                                    {console.log(movie.attributes)}
+                                    <ListItem movie={movie.attributes} id={movie.id} />
                                 </div>
                             ))}
 
