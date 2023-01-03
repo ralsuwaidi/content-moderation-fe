@@ -5,6 +5,7 @@ import App from './Pages/DetailPage';
 import ListPage from './Pages/ListPage';
 import reportWebVitals from './reportWebVitals';
 import { Routes, HashRouter, Route } from "react-router-dom";
+import Signup from './Pages/Signup';
 
 
 
@@ -15,6 +16,7 @@ root.render(
         <Routes>
           <Route path="/" element={<ListPage />} />
           <Route path="/list" element={<ListPage />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/movie/:movieId" element={<App />} />
         </Routes>
       </HashRouter>
