@@ -1,5 +1,4 @@
 import Pill from "./Pill";
-import ProgressBar from "./ProgressBar";
 import SimpleRating from "./SimpleRating";
 import TextWithTitle from "./TextWithTitle";
 
@@ -33,12 +32,9 @@ function BottomPanel(props) {
                 <Pill text={props.movie.year} />
                 <Pill text={props.movie.rating} />
             </div>
-
-            <div className="mt-10">
-                <ProgressBar name="مشاهد عنيفة " percentage={props.movie.violence_rating} />
-                <ProgressBar name="ألفاظ غير لائقة" percentage={props.movie.language_rating} />
-                <ProgressBar name="مواضيع غير مناسبة" percentage={props.movie.inappropriate_rating} />
-            </div>
+            <p className="text-center md:text-base text-xs text-gray-400 mt-3">
+            حسب تصنيف الولايات المتحدة الأمريكية
+            </p>
 
             <div className="mt-8">
                 <TextWithTitle title="الملخص" content={props.movie.summary} />
