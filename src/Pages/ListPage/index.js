@@ -3,6 +3,8 @@ import SearchBar from "./SearchBar.js";
 import API from "../../Common/api.js";
 import { useEffect, useState } from "react";
 import ReactLoading from 'react-loading';
+import { Navbar } from 'flowbite-react';
+import logo from "./nowyouknow-logo.png"
 
 
 function ListPage() {
@@ -18,9 +20,36 @@ function ListPage() {
             <div>
 
 
-                <section className="overflow-hidden text-gray-700 mt-10">
+                <section className="overflow-hidden text-gray-700 ">
 
-                    <div className=" px-3 py-2 mx-auto lg:pt-12 lg:px-32">
+                    <div className=" px-3 mx-auto lg:pt-12 lg:px-32">
+
+                        <nav className='mb-10'>
+                        <Navbar
+                            fluid={true}
+                            rounded={true}
+                        >
+                            <Navbar.Brand href="https://flowbite.com/">
+                            <img
+      src={logo}
+      className="mr-3 h-6 sm:h-9"
+      alt="Flowbite Logo"
+    />
+                                <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
+                                    
+                                </span>
+                            </Navbar.Brand>
+                            <Navbar.Toggle />
+                            <Navbar.Collapse>
+                                <Navbar.Link href="/navbars">
+                                    انضم إلينا
+                                </Navbar.Link>
+                            </Navbar.Collapse>
+                        </Navbar>
+                        </nav>
+
+            
+
                         <p className=' text-right mb-5 text-4xl md:text-6xl font-bold'>أفلام</p>
                         <div className="pb-10">
                             <SearchBar />
