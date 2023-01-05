@@ -1131,6 +1131,11 @@
   dependencies:
     chalk "^4.1.0"
 
+"@coreui/react@^4.5.0":
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/@coreui/react/-/react-4.5.0.tgz#39508e4b387e06d796d4e79a87997acfa24669bc"
+  integrity sha512-cdG33K9P8/Qod3PnfDavBi+GvmhgeeYBawjH0OUfA2pMbujgbF3H4k+Xpf74CjcHUds9XISWlRAFrnC7KZHMgQ==
+
 "@cspotcode/source-map-support@^0.8.0":
   version "0.8.1"
   resolved "https://registry.yarnpkg.com/@cspotcode/source-map-support/-/source-map-support-0.8.1.tgz#00629c35a688e05a88b1cda684fb9d5e73f000a1"
@@ -1874,6 +1879,11 @@
   version "2.11.6"
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.6.tgz#cee20bd55e68a1720bdab363ecf0c821ded4cd45"
   integrity sha512-50/17A98tWUfQ176raKiOGXuYpLyyVMkxxG6oylzL3BPOlA6ADGdK7EYunSa4I064xerltq9TGXs8HmOk5E+vw==
+
+"@ramonak/react-progress-bar@^5.0.3":
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/@ramonak/react-progress-bar/-/react-progress-bar-5.0.3.tgz#a3518fb19e6650e593a208dd429dca7cb6b63d52"
+  integrity sha512-VxXGKN74q94jYoeYuFNJm3xvWhVz9dy+alFZ8S4ZmTTr/05CCq9PjwthT8JB27UdAvn8pHvKBmemV8JU2cZi6A==
 
 "@remix-run/router@1.0.5":
   version "1.0.5"
