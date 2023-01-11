@@ -22,7 +22,7 @@ function ProgressBarProp(props) {
             <div className="flex-1">
 
 
-            <ProgressBar completed={props.percentage} bgColor={bgColor} />
+            <ProgressBar completed={props.percentage} bgColor={bgColor} labelColor={bgColor} />
             </div>
 
 
