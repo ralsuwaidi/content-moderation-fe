@@ -10,7 +10,7 @@ function ListPage() {
     const [movies, setMovies] = useState()
 
     useEffect(() => {
-        API.get('movies/?populate=*',).then((data) => (console.log(setMovies(data))))
+        API.get('movies/?populate=*',).then((data) => (setMovies(data)))
     }, []);
 
 
