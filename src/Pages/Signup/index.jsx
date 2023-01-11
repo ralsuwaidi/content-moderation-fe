@@ -40,11 +40,11 @@ function Signup() {
     return (
         <>
         <div className={isSubmitted? "": "hidden"}>
-        <div className="space-x-4 divide-x divide-gray-200 dark:divide-gray-700 absolute bottom-0 right-4">
+        <div className="space-x-4 divide-x divide-gray-200 dark:divide-gray-700 absolute bottom-4 right-4">
                 <Toast>
-                    <FaCheck className="h-5 w-5 text-blue-600 dark:text-blue-500" />
+                    <FaCheck className="h-5 w-5 text-green-600 dark:text-blue-500" />
                     <div className="pl-4 text-sm font-normal">
-                        Message sent successfully.
+                        Application has been submitted successfully.
                     </div>
                     <Toast.Toggle />
                 </Toast>
