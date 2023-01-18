@@ -14,6 +14,7 @@
 */
 
 import { CiSearch } from "react-icons/ci";
+import API from "../../Common/api";
 
 
 
@@ -22,10 +23,7 @@ export default function SearchBar(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     const search = event.target[0].value
-    let filteredList = props.movies.filter(movie=> movie.attributes.title.toLowerCase().includes(search.toLowerCase()));
-    if (event.target[0].value==="") filteredList=[];
-    props.filterMovies(filteredList)
-    event.target[0].value=""
+    API.get('movies/?populate=*&filters[title][$contains]=' + search,).then((data) => (props.setMovies(data.data.data)))
   
   }
   return (
