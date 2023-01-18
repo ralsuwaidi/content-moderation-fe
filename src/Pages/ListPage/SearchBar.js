@@ -23,7 +23,7 @@ export default function SearchBar(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     const search = event.target[0].value
-    API.get('movies/?populate=*&filters[title][$contains]=' + search,).then((data) => (props.setMovies(data.data.data)))
+    API.get('movies/?populate=*&filters[title][$containsi]=' + search,).then((data) => (props.setMovies(data.data.data)))
   
   }
   return (
