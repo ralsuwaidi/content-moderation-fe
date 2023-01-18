@@ -17,9 +17,19 @@ import { CiSearch } from "react-icons/ci";
 
 
 
-export default function SearchBar() {
+export default function SearchBar(props) {
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const search = event.target[0].value
+    let filteredList = props.movies.filter(movie=> movie.attributes.title.toLowerCase().includes(search.toLowerCase()));
+    if (event.target[0].value==="") filteredList=[];
+    props.filterMovies(filteredList)
+    event.target[0].value=""
+  
+  }
   return (
-    <div>
+    <form onSubmit={handleSubmit}>
       <div className="relative mt-1 rounded-md shadow-sm">
         <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
           <span className="text-gray-500 "><CiSearch /></span>
@@ -45,6 +55,6 @@ export default function SearchBar() {
           </select>
         </div>
       </div>
-    </div>
+    </form>
   )
 }

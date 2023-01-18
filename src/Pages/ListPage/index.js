@@ -2,7 +2,6 @@ import ListItem from './ListItem';
 import SearchBar from "./SearchBar.js";
 import API from "../../Common/api.js";
 import { useEffect, useState } from "react";
-import ReactLoading from 'react-loading';
 import Navigationbar from '../Common/Navigationbar';
 
 
@@ -10,9 +9,16 @@ function ListPage() {
     const [movies, setMovies] = useState()
 
     useEffect(() => {
-        API.get('movies/?populate=*',).then((data) => (setMovies(data)))
+        API.get('movies/?populate=*',).then((data) => (setMovies(data.data.data)))
     }, []);
 
+    function filterMovies(searchItems){
+        if (searchItems.length <1){
+            API.get('movies/?populate=*',).then((data) => (setMovies(data.data.data)))
+        } else{
+            setMovies(searchItems)
+        }
+    }
 
     if (movies) {
         return (
@@ -27,13 +33,12 @@ function ListPage() {
 
                         <p className=' text-right mb-5 text-4xl md:text-6xl font-bold'>أفلام</p>
                         <div className="pb-10">
-                            <SearchBar />
+                            <SearchBar movies={movies} filterMovies={filterMovies} />
                         </div>
                         <div className="grid grid-cols-3 gap-3 justify-items-stretch items-stretch">
 
-                            {movies.data.data.map((movie) => (
+                            {movies.map((movie) => (
                                 <div key={movie.id}>
-                                    {console.log(movie.attributes)}
                                     <ListItem movie={movie.attributes} id={movie.id} />
                                 </div>
                             ))}
@@ -48,7 +53,7 @@ function ListPage() {
     } else {
 
         <div className='h-screen w-screen'>
-            <ReactLoading type={'spin'} color={'#ffffff'} height={'50%'} width={'50%'} />
+            <p>loading...</p>
         </div>
 
     }
