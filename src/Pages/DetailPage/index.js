@@ -11,7 +11,6 @@ function App() {
   useEffect(() => {
     API.get('movies/' + movieId + "?populate=*",).then((data) => {
       const movie = data.data.data.attributes
-      console.log(movie)
 
       setMovie(movie)
     })

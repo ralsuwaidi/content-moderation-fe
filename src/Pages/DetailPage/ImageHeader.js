@@ -4,7 +4,7 @@ import { BiTimeFive } from "react-icons/bi";
 import { AiFillPlayCircle } from "react-icons/ai"
 
 function ImageHeader(props) {
-    const imageUrl = process.env.REACT_APP_BASE_URL.substring(0, process.env.REACT_APP_BASE_URL.lastIndexOf('/api/')) + props.movie.poster.data.attributes.url
+    const imageUrl = props.movie.poster.data.attributes.url.replace('https://https', 'https://aicdn.sgp1.cdn.digitaloceanspaces.com')
 
     return (
         <div className={"w-full h-screen "} >
